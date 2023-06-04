@@ -1,0 +1,30 @@
+class AppImages {
+  static const splash1 = 'assets/images/splash_1.svg';
+  static const splash2 = 'assets/images/splash_2.svg';
+  static const splash3 = 'assets/images/splash_3.svg';
+  static const deliver = 'assets/images/deliver.jpg';
+  static const product1 = 'assets/images/1.png';
+  static const product2 = 'assets/images/2.png';
+  static const product3 = 'assets/images/3.png';
+  static const product4 = 'assets/images/4.png';
+  static const product5 = 'assets/images/5.png';
+  static const user = 'assets/images/user.png';
+  static const burger = 'assets/images/burgerlar.jpg';
+  static const burgerFastFood = 'assets/images/burger_fast_food.png';
+  static const banner1 = 'assets/images/banner_1.png';
+  static const banner2 = 'assets/images/banner_2.png';
+  static const duner = 'assets/images/duner.png';
+  static const kombo = 'assets/images/kombo.png';
+  static const sendivich = 'assets/images/sendivich.png';
+  static const chesBurger = 'assets/images/ches_burger.png';
+  static const tomat = 'assets/images/tomat.png';
+  static const sir = 'assets/images/sir.png';
+  static const free = 'assets/images/free.png';
+  static const klab = 'assets/images/klab.png';
+  static const sezr = 'assets/images/sezr.png';
+  static const cola = 'assets/images/cola.png';
+  static const chiken = 'assets/images/chiken.png';
+  static const burgerB = 'assets/images/burger.png';
+  static const russian = 'assets/images/russian.png';
+  static const uzbek = 'assets/images/uzbek.png';
+}
