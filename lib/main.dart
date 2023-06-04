@@ -25,14 +25,23 @@
 
 import 'package:bot_delivery/assets/themes/theme.dart';
 import 'package:bot_delivery/features/main/presentation/controllers/bloc/orders_bloc.dart';
+import 'package:bot_delivery/features/main/presentation/views/change_info.dart';
 import 'package:bot_delivery/features/main/presentation/views/chek_view.dart';
 import 'package:bot_delivery/features/main/presentation/views/info_commit.dart';
 import 'package:bot_delivery/features/main/presentation/views/my_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() => runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -61,6 +70,9 @@ class MyApp extends StatelessWidget {
             case '/chek':
               return CupertinoPageRoute(
                   builder: (_) => const ChekView(), settings: settings);
+            case '/change':
+              return CupertinoPageRoute(
+                  builder: (_) => const ChangeInfoView(), settings: settings);
           }
           return null;
         },

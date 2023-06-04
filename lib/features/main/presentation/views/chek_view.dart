@@ -135,54 +135,57 @@ class _ChekViewState extends State<ChekView> {
               Container(
                 color: contColor,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                child:  Column(
-                  children: [
-                    ListTile(
-                      contentPadding:const EdgeInsets.all(0),
-                      leading:const Icon(
-                        Icons.location_on_sharp,
-                        color: Colors.white,
+                child: GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/change'),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        contentPadding: const EdgeInsets.all(0),
+                        leading: const Icon(
+                          Icons.location_on_sharp,
+                          color: Colors.white,
+                        ),
+                        title: Text(
+                          'Toshkent, Uchtepa, Nashriyot 232',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        subtitle: Text(
+                          'Yetkazib berish manzili',
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
                       ),
-                      title: Text(
-                        'Toshkent, Uchtepa, Nashriyot 232',
-                        style: Theme.of(context).textTheme.bodyLarge,
+                      ListTile(
+                        contentPadding: const EdgeInsets.all(0),
+                        leading: const Icon(
+                          Icons.person_3_outlined,
+                          color: Colors.white,
+                        ),
+                        title: Text(
+                          'Mahmud Gorsohta',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        subtitle: Text(
+                          'ism',
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
                       ),
-                      subtitle: Text(
-                        'Yetkazib berish manzili',
-                        style: Theme.of(context).textTheme.labelLarge,
-                      ),
-                    ),
-                    ListTile(
-                      contentPadding: const EdgeInsets.all(0),
-                      leading: const Icon(
-                        Icons.person_3_outlined,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        'Mahmud Gorsohta',
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                      subtitle: Text(
-                        'ism',
-                        style:Theme.of(context).textTheme.labelLarge,
-                      ),
-                    ),
-                    ListTile(
-                      contentPadding: const EdgeInsets.all(0),
-                      leading: const Icon(
-                        Icons.phone,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        '998900020469',
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                      subtitle: Text(
-                        'Telefon Raqami',
-                        style: Theme.of(context).textTheme.labelLarge,
-                      ),
-                    )
-                  ],
+                      ListTile(
+                        contentPadding: const EdgeInsets.all(0),
+                        leading: const Icon(
+                          Icons.phone,
+                          color: Colors.white,
+                        ),
+                        title: Text(
+                          '998900020469',
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        subtitle: Text(
+                          'Telefon Raqami',
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

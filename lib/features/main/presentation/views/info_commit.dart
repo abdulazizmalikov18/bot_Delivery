@@ -1,5 +1,6 @@
 import 'package:bot_delivery/assets/colors/colors.dart';
 import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
+import 'package:bot_delivery/features/common/widgets/w_textfield.dart';
 import 'package:bot_delivery/features/main/presentation/controllers/bloc/orders_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -116,31 +117,12 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                   margin: const EdgeInsets.only(top: 16),
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                  child: Column(
+                  child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Izoh'),
-                      TextField(
-                        cursorColor: Colors.white,
-                        style: Theme.of(context)
-                            .textTheme
-                            .displayLarge!
-                            .copyWith(
-                                fontWeight: FontWeight.w400, color: white),
-                        decoration: InputDecoration(
-                          hintText: 'Add commit...',
-                          hintStyle: const TextStyle(color: Colors.white),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide:
-                                const BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide:
-                                const BorderSide(color: Colors.transparent),
-                          ),
-                        ),
+                      Text('Izoh'),
+                      MTextField(
+                        hintText: 'Add commit...',
                       ),
                     ],
                   ),
@@ -154,9 +136,9 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                 height: 60,
                 color: Colors.green,
                 alignment: Alignment.center,
-                child:  Text(
+                child: Text(
                   "Pay ${state.allPrice} som",
-                  style:const TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
