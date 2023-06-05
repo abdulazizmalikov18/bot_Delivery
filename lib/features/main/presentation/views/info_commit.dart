@@ -1,25 +1,26 @@
 import 'package:bot_delivery/assets/colors/colors.dart';
+import 'package:bot_delivery/core/utils/my_function.dart';
 import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
 import 'package:bot_delivery/features/common/widgets/w_textfield.dart';
 import 'package:bot_delivery/features/main/presentation/controllers/bloc/orders_bloc.dart';
+import 'package:bot_delivery/features/main/presentation/views/chek_view.dart';
+import 'package:bot_delivery/features/main/presentation/widgets/custom_page_route_builder.dart';
+import 'package:bot_delivery/features/main/presentation/widgets/info_user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:keyboard_dismisser/keyboard_dismisser.dart';
 
 class InfoCommitView extends StatefulWidget {
-  const InfoCommitView({super.key});
+  const InfoCommitView({super.key, required this.isDelivery});
+  final bool isDelivery;
 
   @override
   State<InfoCommitView> createState() => _InfoCommitViewState();
 }
 
 class _InfoCommitViewState extends State<InfoCommitView> {
-  @override
-  void initState() {
-    context.read<OrdersBloc>().add(PriceAll());
-    super.initState();
-  }
-
+  int payTypeC = 0;
+  List<String> payType = ['Naqd pul', 'Payme', 'Click'];
   @override
   Widget build(BuildContext context) {
     return KeyboardDismisser(
@@ -27,16 +28,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
         builder: (context, state) {
           return Scaffold(
             appBar: AppBar(
-              title: const Text('Taqachi Burger'),
-              actions: [
-                IconButton(
-                  icon: const Icon(
-                    Icons.more_vert_rounded,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {},
-                )
-              ],
+              title: const Text('Buyurtmani Rasmiylashtirish'),
             ),
             body: ListView(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -100,7 +92,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                               Padding(
                                 padding: const EdgeInsets.only(top: 12),
                                 child: Text(
-                                  '${state.orderList[index].itemCount * state.orderList[index].price} som',
+                                  '${MyFunctions.getThousandsSeparatedPrice((state.orderList[index].itemCount * state.orderList[index].price).toString())} som',
                                   style:
                                       Theme.of(context).textTheme.displayLarge,
                                 ),
@@ -109,35 +101,123 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                           ),
                         ),
                       ),
+                      if (widget.isDelivery)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Yetkazish',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displayLarge!
+                                    .copyWith(color: Colors.grey),
+                              ),
+                              Text(
+                                '10 000 so\'m',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .displayLarge!
+                                    .copyWith(color: Colors.grey),
+                              )
+                            ],
+                          ),
+                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Jami',
+                            style: Theme.of(context).textTheme.displayLarge,
+                          ),
+                          Text(
+                            widget.isDelivery
+                                ? " ${MyFunctions.getThousandsSeparatedPrice((state.allPrice + 10000).toString())} so'm"
+                                : " ${MyFunctions.getThousandsSeparatedPrice(state.allPrice.toString())} so'm",
+                            style: Theme.of(context).textTheme.displayLarge,
+                          )
+                        ],
+                      ),
                     ],
                   ),
                 ),
                 Container(
                   color: contColor,
-                  margin: const EdgeInsets.only(top: 16),
+                  margin: const EdgeInsets.symmetric(vertical: 16),
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   child: const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Izoh'),
-                      MTextField(
-                        hintText: 'Add commit...',
-                      ),
+                      MTextField(hintText: 'Add commit...'),
                     ],
                   ),
-                )
+                ),
+                InfoUser(isDelivery: widget.isDelivery),
+                Container(
+                  color: contColor,
+                  margin: const EdgeInsets.symmetric(vertical: 16),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: ListView.separated(
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) => ListTile(
+                      onTap: () => setState(() {
+                        payTypeC = index;
+                      }),
+                      contentPadding: const EdgeInsets.all(0),
+                      title: Text(
+                        payType[index],
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      minLeadingWidth: 0,
+                      leading: Container(
+                        height: 36,
+                        width: 36,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: greyText),
+                          color: bGrey,
+                        ),
+                      ),
+                      trailing: index == payTypeC
+                          ? const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 8),
+                              child: Icon(
+                                Icons.radio_button_checked_rounded,
+                                color: Colors.green,
+                              ),
+                            )
+                          : const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 8),
+                              child: Icon(
+                                Icons.radio_button_off_rounded,
+                              ),
+                            ),
+                    ),
+                    separatorBuilder: (context, index) =>
+                        const Divider(height: 1),
+                    itemCount: payType.length,
+                  ),
+                ),
               ],
             ),
             bottomNavigationBar: GestureDetector(
-              onTap: () => Navigator.pushNamed(context, '/chek'),
+              onTap: () => Navigator.of(context).push(CustomPageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    const ChekView(),
+              )),
               child: Container(
                 width: double.infinity,
                 height: 60,
                 color: Colors.green,
                 alignment: Alignment.center,
                 child: Text(
-                  "Pay ${state.allPrice} som",
+                  widget.isDelivery
+                      ? "Pay ${MyFunctions.getThousandsSeparatedPrice((state.allPrice + 10000).toString())} so'm"
+                      : "Pay ${MyFunctions.getThousandsSeparatedPrice(state.allPrice.toString())} so'm",
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,

@@ -14,7 +14,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
- 
+  <!-- <base href="https://github.com/abdulazizmalikov18/taqachiBurger.github.io.git"> -->
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -54,6 +54,25 @@
         }
       });
     });
+  </script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdFIykHyhjKhQ3X2z0imiFrOAJCh1YWpE",
+      authDomain: "delivery-bot-29094.firebaseapp.com",
+      projectId: "delivery-bot-29094",
+      storageBucket: "delivery-bot-29094.appspot.com",
+      messagingSenderId: "7551035257",
+      appId: "1:7551035257:web:003e2db80a1484dc71f1a8"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
   </script>
 </body>
 </html>

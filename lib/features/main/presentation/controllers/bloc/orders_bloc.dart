@@ -24,11 +24,12 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
     });
     on<PriceAll>((event, emit) {
       int a = 0;
-      for (var element in state.orderList) {
-        a += element.price * element.itemCount;
+      if (event.remove) {
+        a = state.allPrice - event.price;
+      } else {
+        a = state.allPrice + event.price;
       }
       emit(state.copyWith(allPrice: a));
     });
- 
   }
 }

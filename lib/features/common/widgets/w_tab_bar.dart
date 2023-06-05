@@ -12,9 +12,8 @@ class WTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 16, left: 16),
       decoration: BoxDecoration(
-        color: whiteSmoke,
+        color: const Color(0xff151E27),
         borderRadius: BorderRadius.circular(12),
       ),
       child: TabBar(
@@ -35,7 +34,7 @@ class WTabBar extends StatelessWidget {
               side:
                   BorderSide(color: const Color(0xff000000).withOpacity(0.04)),
               borderRadius: BorderRadius.circular(8)),
-          color: Colors.white,
+          color: contColor,
         ),
         controller: tabController,
         indicatorSize: TabBarIndicatorSize.tab,
@@ -49,7 +48,7 @@ class WTabBar extends StatelessWidget {
               fontWeight: FontWeight.w600,
             ),
         unselectedLabelColor: shuttleGrey,
-        labelColor: dark,
+        labelColor: white,
         tabs: tabs,
       ),
     );

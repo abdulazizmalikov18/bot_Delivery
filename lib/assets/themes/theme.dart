@@ -13,6 +13,13 @@ abstract class AppTheme {
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         unselectedWidgetColor: Colors.black,
+        iconTheme: const IconThemeData(color: white),
+        // pageTransitionsTheme: const PageTransitionsTheme(
+        //   builders: {
+        //     TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        //     TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+        //   },
+        // ),
         textTheme: const TextTheme(
           displayLarge: displayLarge,
           displayMedium: displayMedium,

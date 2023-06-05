@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "7551035257",
+    "project_id": "delivery-bot-29094",
+    "storage_bucket": "delivery-bot-29094.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7551035257:android:6c958d312c12120171f1a8",
+        "android_client_info": {
+          "package_name": "com.example.bot_delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "7551035257-c0q9b630ggepmsbdloctntp2pf5gifps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqwkp1f-YzkhBO5Y9kHRqdP0N5ppsf6eE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "7551035257-c0q9b630ggepmsbdloctntp2pf5gifps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

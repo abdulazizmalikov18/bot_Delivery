@@ -14,4 +14,9 @@ class RemoveOrder extends OrdersEvent {
   RemoveOrder(this.index);
 }
 
-class PriceAll extends OrdersEvent {}
+class PriceAll extends OrdersEvent {
+  final int price;
+  final bool remove;
+
+  PriceAll({required this.price, required this.remove});
+}
