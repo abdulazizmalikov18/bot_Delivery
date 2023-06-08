@@ -19,7 +19,7 @@ class InfoCommitView extends StatefulWidget {
 }
 
 class _InfoCommitViewState extends State<InfoCommitView> {
-  int payTypeC = 0;
+  int payTypeC = -1;
   List<String> payType = ['Naqd pul', 'Payme', 'Click'];
   @override
   Widget build(BuildContext context) {
@@ -163,6 +163,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: ListView.separated(
                     shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => ListTile(
                       onTap: () => setState(() {
                         payTypeC = index;
@@ -204,28 +205,36 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                 ),
               ],
             ),
-            bottomNavigationBar: GestureDetector(
-              onTap: () => Navigator.of(context).push(CustomPageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    const ChekView(),
-              )),
-              child: Container(
-                width: double.infinity,
-                height: 60,
-                color: Colors.green,
-                alignment: Alignment.center,
-                child: Text(
-                  widget.isDelivery
-                      ? "Pay ${MyFunctions.getThousandsSeparatedPrice((state.allPrice + 10000).toString())} so'm"
-                      : "Pay ${MyFunctions.getThousandsSeparatedPrice(state.allPrice.toString())} so'm",
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
+            bottomNavigationBar: payTypeC >= 0
+                ? GestureDetector(
+                    onTap: () {
+                      for (var i = 0; i < state.orderList.length; i++) {
+                        state.orderList[i].itemCount = 0;
+                      }
+                      context.read<OrdersBloc>().add(RemoveAllOrder());
+                      Navigator.of(context).push(CustomPageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            const ChekView(),
+                      ));
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 60,
+                      color: Colors.green,
+                      alignment: Alignment.center,
+                      child: Text(
+                        widget.isDelivery
+                            ? "Pay ${MyFunctions.getThousandsSeparatedPrice((state.allPrice + 10000).toString())} so'm"
+                            : "Pay ${MyFunctions.getThousandsSeparatedPrice(state.allPrice.toString())} so'm",
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  )
+                : null,
           );
         },
       ),

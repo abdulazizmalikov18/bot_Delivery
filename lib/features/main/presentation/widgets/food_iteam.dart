@@ -47,7 +47,7 @@ class _FoodIteamState extends State<FoodIteam> {
                   child: Text(
                     '${AppData.listOrder[widget.index].itemCount}',
                     style: const TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       color: Colors.white,
                     ),
                   ),
@@ -59,14 +59,14 @@ class _FoodIteamState extends State<FoodIteam> {
         Text(
           AppData.listOrder[widget.index].name,
           style: const TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             color: Colors.white,
           ),
         ),
         Text(
           '${MyFunctions.getThousandsSeparatedPrice(AppData.listOrder[widget.index].price.toString())} som',
           style: const TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             color: Colors.white,
           ),
         ),
@@ -115,7 +115,7 @@ class _FoodIteamState extends State<FoodIteam> {
                       child: const Text(
                         '-',
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
                         ),
@@ -149,7 +149,7 @@ class _FoodIteamState extends State<FoodIteam> {
                         ? const Text(
                             'ADD',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 14,
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                             ),
@@ -157,7 +157,7 @@ class _FoodIteamState extends State<FoodIteam> {
                         : const Text(
                             '+',
                             style: TextStyle(
-                              fontSize: 18,
+                              fontSize: 16,
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                             ),

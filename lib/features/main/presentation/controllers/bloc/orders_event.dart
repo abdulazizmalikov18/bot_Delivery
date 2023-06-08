@@ -13,6 +13,7 @@ class RemoveOrder extends OrdersEvent {
 
   RemoveOrder(this.index);
 }
+class RemoveAllOrder extends OrdersEvent {}
 
 class PriceAll extends OrdersEvent {
   final int price;

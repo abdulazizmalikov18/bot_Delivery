@@ -22,6 +22,11 @@ class OrdersBloc extends Bloc<OrdersEvent, OrdersState> {
       list.removeAt(index);
       emit(state.copyWith(orderList: list));
     });
+
+    on<RemoveAllOrder>((event, emit) {
+      emit(state.copyWith(orderList: []));
+    });
+
     on<PriceAll>((event, emit) {
       int a = 0;
       if (event.remove) {

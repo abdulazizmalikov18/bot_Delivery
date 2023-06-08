@@ -41,6 +41,7 @@ dependencies:
   flutter_svg: ^2.0.6
   keyboard_dismisser: ^3.0.0
   firebase_core: ^2.13.1
+  lottie: ^2.4.0
 
 dev_dependencies:
   flutter_test:
