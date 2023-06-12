@@ -30,7 +30,7 @@ class HistoryView extends StatelessWidget {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Oqtepa Uchtepa'),
+                  Text('Delivery'),
                   Text('86 500 so‘m'),
                 ],
               ),

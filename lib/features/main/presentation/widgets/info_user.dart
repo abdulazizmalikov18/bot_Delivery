@@ -36,7 +36,7 @@ class InfoUser extends StatelessWidget {
                 color: white,
               ),
               title: Text(
-                'Mahmud Gorsohta',
+                'Mahmud Karimberdiyev',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               subtitle: Text(

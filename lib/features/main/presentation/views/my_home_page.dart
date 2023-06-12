@@ -1,7 +1,6 @@
 import 'package:bot_delivery/assets/colors/colors.dart';
-import 'package:bot_delivery/assets/constants/icons.dart';
 import 'package:bot_delivery/features/common/data/data.dart';
-import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
+import 'package:bot_delivery/features/common/widgets/w_button.dart';
 import 'package:bot_delivery/features/main/presentation/controllers/bloc/orders_bloc.dart';
 import 'package:bot_delivery/features/main/presentation/views/info_commit.dart';
 import 'package:bot_delivery/features/main/presentation/widgets/custom_page_route_builder.dart';
@@ -41,18 +40,16 @@ class _MyHomePageState extends State<MyHomePage>
           appBar: AppBar(
             title: const Text("Taqachi Burger"),
             actions: [
-              WScaleAnimation(
+              WButton(
+                margin: const EdgeInsets.fromLTRB(0, 8, 16, 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 onTap: () => Navigator.of(context).push(CustomPageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
                         const DeliveryView())),
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 12, 16, 12),
-                  child: Image.asset(
-                    AppIcons.orders,
-                    color: white,
-                  ),
-                ),
-              ),
+                text: 'Buyurtmalar',
+                color: contColor,
+              )
             ],
           ),
           body: ListView(

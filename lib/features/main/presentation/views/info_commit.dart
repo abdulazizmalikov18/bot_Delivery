@@ -161,46 +161,53 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                   margin: const EdgeInsets.symmetric(vertical: 16),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  child: ListView.separated(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) => ListTile(
-                      onTap: () => setState(() {
-                        payTypeC = index;
-                      }),
-                      contentPadding: const EdgeInsets.all(0),
-                      title: Text(
-                        payType[index],
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      minLeadingWidth: 0,
-                      leading: Container(
-                        height: 36,
-                        width: 36,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(color: greyText),
-                          color: bGrey,
-                        ),
-                      ),
-                      trailing: index == payTypeC
-                          ? const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 8),
-                              child: Icon(
-                                Icons.radio_button_checked_rounded,
-                                color: Colors.green,
-                              ),
-                            )
-                          : const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 8),
-                              child: Icon(
-                                Icons.radio_button_off_rounded,
-                              ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('To\'lov turi'),
+                      const SizedBox(height: 8),
+                      ListView.separated(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemBuilder: (context, index) => ListTile(
+                          onTap: () => setState(() {
+                            payTypeC = index;
+                          }),
+                          contentPadding: const EdgeInsets.all(0),
+                          title: Text(
+                            payType[index],
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                          minLeadingWidth: 0,
+                          leading: Container(
+                            height: 36,
+                            width: 36,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(color: greyText),
+                              color: bGrey,
                             ),
-                    ),
-                    separatorBuilder: (context, index) =>
-                        const Divider(height: 1),
-                    itemCount: payType.length,
+                          ),
+                          trailing: index == payTypeC
+                              ? const Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                  child: Icon(
+                                    Icons.radio_button_checked_rounded,
+                                    color: Colors.green,
+                                  ),
+                                )
+                              : const Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 8),
+                                  child: Icon(
+                                    Icons.radio_button_off_rounded,
+                                  ),
+                                ),
+                        ),
+                        separatorBuilder: (context, index) =>
+                            const Divider(height: 1),
+                        itemCount: payType.length,
+                      ),
+                    ],
                   ),
                 ),
               ],
