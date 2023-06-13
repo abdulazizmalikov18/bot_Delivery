@@ -4,4 +4,7 @@ class AppIcons {
   static const finish = 'assets/icons/finish.svg';
   static const menu = 'assets/icons/menu.svg';
   static const orders = 'assets/icons/orders.png';
+  static const click = 'assets/icons/click.png';
+  static const naqt = 'assets/icons/naqt.png';
+  static const payme = 'assets/icons/payme.png';
 }

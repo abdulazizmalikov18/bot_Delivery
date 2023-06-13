@@ -1,4 +1,5 @@
 import 'package:bot_delivery/assets/colors/colors.dart';
+import 'package:bot_delivery/assets/constants/icons.dart';
 import 'package:bot_delivery/core/utils/my_function.dart';
 import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
 import 'package:bot_delivery/features/common/widgets/w_textfield.dart';
@@ -21,6 +22,7 @@ class InfoCommitView extends StatefulWidget {
 class _InfoCommitViewState extends State<InfoCommitView> {
   int payTypeC = -1;
   List<String> payType = ['Naqd pul', 'Payme', 'Click'];
+  List<String> payIcons = [AppIcons.naqt, AppIcons.payme, AppIcons.click];
   @override
   Widget build(BuildContext context) {
     return KeyboardDismisser(
@@ -185,8 +187,10 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(color: greyText),
-                              color: bGrey,
+                              color: white,
                             ),
+                            padding: const EdgeInsets.all(4),
+                            child: Image.asset(payIcons[index]),
                           ),
                           trailing: index == payTypeC
                               ? const Padding(

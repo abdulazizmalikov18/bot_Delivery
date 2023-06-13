@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage>
       builder: (context, state) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text("Taqachi Burger"),
+            title: const Text("Delivery Burger"),
             actions: [
               WButton(
                 margin: const EdgeInsets.fromLTRB(0, 8, 16, 8),

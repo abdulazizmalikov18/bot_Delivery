@@ -1,4 +1,6 @@
 import 'package:bot_delivery/assets/colors/colors.dart';
+import 'package:bot_delivery/features/main/presentation/views/change_info.dart';
+import 'package:bot_delivery/features/main/presentation/widgets/custom_page_route_builder.dart';
 import 'package:flutter/material.dart';
 
 class InfoUser extends StatelessWidget {
@@ -11,7 +13,9 @@ class InfoUser extends StatelessWidget {
       color: contColor,
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: GestureDetector(
-        onTap: () => Navigator.pushNamed(context, '/change'),
+        onTap: () => Navigator.of(context).push(CustomPageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const ChangeInfoView())),
         child: Column(
           children: [
             ListTile(

@@ -18,14 +18,11 @@ class _FilialLocationViewState extends State<FilialLocationView> {
       ),
       body: ListView.builder(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.symmetric(vertical:16),
         itemCount: location.length,
         itemBuilder: (context, index) => Container(
           padding: const EdgeInsets.all(12),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            color: contColor,
-          ),
+          color: contColor,
           margin: const EdgeInsets.only(bottom: 16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
