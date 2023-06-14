@@ -87,7 +87,7 @@ class _MyHomePageState extends State<MyHomePage>
                     color: Colors.green,
                     alignment: Alignment.center,
                     child: const Text(
-                      "View Order",
+                      "Buyurtmani Ko'rish",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,

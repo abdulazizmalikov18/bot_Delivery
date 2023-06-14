@@ -20,9 +20,12 @@ class InfoUser extends StatelessWidget {
           children: [
             ListTile(
               contentPadding: const EdgeInsets.all(0),
-              leading: const Icon(
-                Icons.location_on_sharp,
-                color: white,
+              leading: const Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Icon(
+                  Icons.location_on_sharp,
+                  color: white,
+                ),
               ),
               title: Text(
                 'Toshkent, Uchtepa, Nashriyot 232',
@@ -35,9 +38,12 @@ class InfoUser extends StatelessWidget {
             ),
             ListTile(
               contentPadding: const EdgeInsets.all(0),
-              leading: const Icon(
-                Icons.person_rounded,
-                color: white,
+              leading: const Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Icon(
+                  Icons.person_rounded,
+                  color: white,
+                ),
               ),
               title: Text(
                 'Mahmud Karimberdiyev',
@@ -50,9 +56,12 @@ class InfoUser extends StatelessWidget {
             ),
             ListTile(
               contentPadding: const EdgeInsets.all(0),
-              leading: const Icon(
-                Icons.phone,
-                color: white,
+              leading: const Padding(
+                padding: EdgeInsets.only(top: 8),
+                child: Icon(
+                  Icons.phone,
+                  color: white,
+                ),
               ),
               title: Text(
                 '998900020469',

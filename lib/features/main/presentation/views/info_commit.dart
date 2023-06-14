@@ -45,7 +45,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           const Text(
-                            'YOUR ORDER',
+                            'Tanlangan mahsulotlar',
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -55,7 +55,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                           WScaleAnimation(
                             onTap: () => Navigator.pop(context),
                             child: Text(
-                              'EDIT',
+                              'O\'zgartirish',
                               style: Theme.of(context)
                                   .textTheme
                                   .titleLarge!
@@ -153,7 +153,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Izoh'),
-                      MTextField(hintText: 'Add commit...'),
+                      MTextField(hintText: 'Izoh yozing...'),
                     ],
                   ),
                 ),
@@ -225,7 +225,7 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                       context.read<OrdersBloc>().add(RemoveAllOrder());
                       Navigator.of(context).push(CustomPageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            const ChekView(),
+                            ChekView(isDelivery: widget.isDelivery),
                       ));
                     },
                     child: Container(
@@ -235,8 +235,8 @@ class _InfoCommitViewState extends State<InfoCommitView> {
                       alignment: Alignment.center,
                       child: Text(
                         widget.isDelivery
-                            ? "Pay ${MyFunctions.getThousandsSeparatedPrice((state.allPrice + 10000).toString())} so'm"
-                            : "Pay ${MyFunctions.getThousandsSeparatedPrice(state.allPrice.toString())} so'm",
+                            ? "To'lsh ${MyFunctions.getThousandsSeparatedPrice((state.allPrice + 10000).toString())} so'm"
+                            : "To'lsh ${MyFunctions.getThousandsSeparatedPrice(state.allPrice.toString())} so'm",
                         style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w600,

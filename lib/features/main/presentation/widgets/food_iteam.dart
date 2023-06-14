@@ -147,7 +147,7 @@ class _FoodIteamState extends State<FoodIteam> {
                     alignment: Alignment.center,
                     child: AppData.listOrder[widget.index].itemCount == 0
                         ? const Text(
-                            'ADD',
+                            'Qo\'shish',
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.white,
