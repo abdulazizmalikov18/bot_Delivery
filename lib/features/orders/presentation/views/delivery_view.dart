@@ -47,7 +47,7 @@ class _DeliveryViewState extends State<DeliveryView>
         ),
       ),
       body: TabBarView(
-        physics: const BouncingScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         controller: tabController,
         children: const [
           OrdersView(),

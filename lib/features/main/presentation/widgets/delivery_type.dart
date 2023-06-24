@@ -39,11 +39,11 @@ class DeliveryType extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 InkWell(
-                  onTap: () => Navigator.of(context).push(
-                    CustomPageRouteBuilder(
+                  onTap: () {
+                    Navigator.of(context).push(CustomPageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            const DeliveryLocationView()),
-                  ),
+                            const DeliveryLocationView()));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,11 +64,11 @@ class DeliveryType extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () => Navigator.of(context).push(
-                    CustomPageRouteBuilder(
+                  onTap: () {
+                    Navigator.of(context).push(CustomPageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            const FilialLocationView()),
-                  ),
+                            const FilialLocationView()));
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

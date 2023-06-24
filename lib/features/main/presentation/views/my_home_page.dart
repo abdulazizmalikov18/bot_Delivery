@@ -7,6 +7,7 @@ import 'package:bot_delivery/features/main/presentation/widgets/custom_page_rout
 import 'package:bot_delivery/features/main/presentation/widgets/delivery_type.dart';
 import 'package:bot_delivery/features/main/presentation/widgets/food_iteam.dart';
 import 'package:bot_delivery/features/orders/presentation/views/delivery_view.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,9 +45,11 @@ class _MyHomePageState extends State<MyHomePage>
                 margin: const EdgeInsets.fromLTRB(0, 8, 16, 8),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                onTap: () => Navigator.of(context).push(CustomPageRouteBuilder(
-                    pageBuilder: (context, animation, secondaryAnimation) =>
-                        const DeliveryView())),
+                onTap: () {
+                  Navigator.of(context).push(CustomPageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          const DeliveryView()));
+                },
                 text: 'Buyurtmalar',
                 color: contColor,
               )
@@ -73,14 +76,13 @@ class _MyHomePageState extends State<MyHomePage>
           ),
           bottomNavigationBar: state.orderList.isNotEmpty
               ? GestureDetector(
-                  onTap: () => Navigator.of(context).push(
-                      CustomPageRouteBuilder(
-                          pageBuilder:
-                              (context, animation, secondaryAnimation) =>
-                                  InfoCommitView(
-                                      isDelivery: tabController.index == 0
-                                          ? true
-                                          : false))),
+                  onTap: () {
+                    Navigator.of(context).push(CustomPageRouteBuilder(
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            InfoCommitView(
+                                isDelivery:
+                                    tabController.index == 0 ? true : false)));
+                  },
                   child: Container(
                     width: double.infinity,
                     height: 60,
