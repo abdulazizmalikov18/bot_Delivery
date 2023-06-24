@@ -3,23 +3,19 @@ import 'package:flutter/material.dart';
 
 abstract class AppTheme {
   static ThemeData theme() => ThemeData(
-        scaffoldBackgroundColor: const Color(0xff151E27),
+        scaffoldBackgroundColor: white,
         fontFamily: 'Inter',
         appBarTheme: const AppBarTheme(
           titleTextStyle: bodyMedium,
-          color: Color(0xff252D3A),
-          iconTheme: IconThemeData(color: white),
+          color: white,
+          centerTitle: true,
+          iconTheme: IconThemeData(color: dark),
+          elevation: 0,
         ),
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         unselectedWidgetColor: Colors.black,
-        iconTheme: const IconThemeData(color: white),
-        // pageTransitionsTheme: const PageTransitionsTheme(
-        //   builders: {
-        //     TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-        //     TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-        //   },
-        // ),
+        iconTheme: const IconThemeData(color: dark),
         textTheme: const TextTheme(
           displayLarge: displayLarge,
           displayMedium: displayMedium,
@@ -37,7 +33,7 @@ abstract class AppTheme {
         ),
         colorScheme: const ColorScheme(
           background: white,
-          brightness: Brightness.light,
+          brightness: Brightness.dark,
           primary: blue,
           secondary: blue,
           error: red,
@@ -54,74 +50,74 @@ abstract class AppTheme {
   static const displayLarge = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    color: white,
+    color: dark,
   );
   static const displayMedium = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
-    color: white,
+    color: dark,
   );
   static const displaySmall = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.w800,
-    color: white,
+    color: dark,
   );
   static const headlineMedium = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w600,
-    color: white,
+    color: dark,
   );
   static const headlineSmall = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
-    color: white,
+    color: dark,
   );
   static const titleLarge = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w500,
-    color: white,
+    color: dark,
   );
   static const bodyLarge = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
-    color: white,
+    color: dark,
   );
 
   static const bodyMedium = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
-    color: white,
+    color: dark,
   );
 
   static const titleMedium = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w600,
-    color: white,
+    color: dark,
   );
 
   static const titleSmall = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w700,
-    color: white,
+    color: dark,
   );
 
   static const bodySmall = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w500,
-    color: white,
+    color: dark,
   );
 
   static const labelLarge = TextStyle(
     fontSize: 14,
     fontWeight: FontWeight.w400,
-    color: white,
+    color: dark,
     letterSpacing: -0.1,
   );
 
   static const labelSmall = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
-    color: white,
+    color: dark,
     letterSpacing: -0.1,
   );
 }

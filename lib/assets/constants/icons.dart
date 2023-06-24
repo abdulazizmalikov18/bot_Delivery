@@ -7,4 +7,5 @@ class AppIcons {
   static const click = 'assets/icons/click.png';
   static const naqt = 'assets/icons/naqt.png';
   static const payme = 'assets/icons/payme.png';
+  static const cart = 'assets/icons/cart.svg';
 }

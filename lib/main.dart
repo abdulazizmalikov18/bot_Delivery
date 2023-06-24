@@ -1,6 +1,6 @@
 import 'package:bot_delivery/assets/themes/theme.dart';
 import 'package:bot_delivery/features/main/presentation/controllers/bloc/orders_bloc.dart';
-import 'package:bot_delivery/features/main/presentation/views/my_home_page.dart';
+import 'package:bot_delivery/features/main/presentation/views/home_main_view.dart';
 import 'package:bot_delivery/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         title: 'Mazmun Group',
         debugShowCheckedModeBanner: false,
         theme: AppTheme.theme(),
-        home: const MyHomePage(),
+        home: const HomeMainView(),
       ),
     );
   }
