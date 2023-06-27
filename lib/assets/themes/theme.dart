@@ -10,7 +10,6 @@ abstract class AppTheme {
           color: white,
           centerTitle: true,
           iconTheme: IconThemeData(color: dark),
-          elevation: 0,
         ),
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,

@@ -1,47 +1,266 @@
 import 'package:bot_delivery/assets/constants/images.dart';
+import 'package:bot_delivery/features/common/data/entity/catigory_entity.dart';
 import 'package:bot_delivery/features/common/data/entity/order_entity.dart';
+import 'package:bot_delivery/features/main/domain/entity/story.dart';
 
 class AppData {
-  static List<OrderEntity> listOrder = [
-    OrderEntity(
+  static List<Story> stories = [
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+    Story(
+      storyName: "Yangilik bor super",
+      image: AppImages.splash1,
+    ),
+  ];
+
+  static List<CatigoryEntity> catigory = [
+    CatigoryEntity(
       id: 1,
-      image: AppImages.burgerB,
-      name: 'Burger',
-      itemCount: 0,
-      price: 28000,
-      subName: 'Big Burger',
+      name: "Kombo",
+      list: [
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+      ],
     ),
-    OrderEntity(
+    CatigoryEntity(
       id: 2,
-      image: AppImages.chesBurger,
-      name: 'Ches Burger',
-      itemCount: 0,
-      price: 32000,
-      subName: 'Big Burger',
+      name: "Mac",
+      list: [
+        OrderEntity(
+          id: 15,
+          name: 'MacBook 14 pro',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 24000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+      ],
     ),
-    OrderEntity(
+    CatigoryEntity(
       id: 3,
-      image: AppImages.klab,
-      name: 'Clab Sendivish',
-      itemCount: 0,
-      price: 32000,
-      subName: 'Shakarli Classic',
+      name: "Ipad",
+      list: [
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+      ],
     ),
-    OrderEntity(
+    CatigoryEntity(
       id: 4,
-      image: AppImages.chiken,
-      name: 'Chikin',
-      itemCount: 0,
-      price: 26000,
-      subName: 'Shakarli Classic',
+      name: "Watch",
+      list: [
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+      ],
     ),
-    OrderEntity(
+    CatigoryEntity(
       id: 5,
-      image: AppImages.cola,
-      name: 'Coca Cola',
-      itemCount: 0,
-      price: 12000,
-      subName: 'Shakarli Classic',
+      name: "Airpods",
+      list: [
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+        OrderEntity(
+          id: 14,
+          name: 'Kombo Super',
+          subName: 'Salom bu Iphoni bolib tolashga olsangiz boladi',
+          image: [
+            AppImages.burgerB,
+            AppImages.burgerB,
+            AppImages.burgerB,
+          ],
+          price: 28000,
+          isLiked: false,
+        ),
+      ],
     ),
   ];
 }

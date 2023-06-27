@@ -42,6 +42,7 @@ dependencies:
   keyboard_dismisser: ^3.0.0
   firebase_core: ^2.13.1
   lottie: ^2.4.0
+  carousel_slider: ^4.2.1
 
 dev_dependencies:
   flutter_test:

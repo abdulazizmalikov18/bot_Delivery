@@ -63,7 +63,7 @@ class WButton extends StatelessWidget {
         padding: padding ?? EdgeInsets.zero,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: isDisabled ? grey : color ?? Colors.green,
+          color: isDisabled ? grey : color ?? red,
           borderRadius: BorderRadius.circular(borderRadius),
           border: border,
           gradient: isDisabled
@@ -74,7 +74,7 @@ class WButton extends StatelessWidget {
                       const LinearGradient(
                         begin: Alignment.centerLeft,
                         end: Alignment.centerRight,
-                        colors: <Color>[Colors.green, Colors.green],
+                        colors: <Color>[red, red],
                       )),
           boxShadow: shadow,
         ),

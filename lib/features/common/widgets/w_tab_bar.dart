@@ -11,46 +11,30 @@ class WTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xff151E27),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: TabBar(
-        padding: const EdgeInsets.all(4),
-        labelPadding: const EdgeInsets.all(8),
-        indicator: ShapeDecoration(
-          shadows: [
-            BoxShadow(
-                blurRadius: 1,
-                offset: const Offset(0, 3),
-                color: const Color(0xff000000).withOpacity(0.04)),
-            BoxShadow(
-                blurRadius: 8,
-                offset: const Offset(0, 3),
-                color: const Color(0xff000000).withOpacity(0.12)),
-          ],
-          shape: RoundedRectangleBorder(
-              side:
-                  BorderSide(color: const Color(0xff000000).withOpacity(0.04)),
-              borderRadius: BorderRadius.circular(8)),
-          color: contColor,
+    return TabBar(
+      isScrollable: true,
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      labelPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+      indicator: ShapeDecoration(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
         ),
-        controller: tabController,
-        indicatorSize: TabBarIndicatorSize.tab,
-        onTap: onTap,
-        unselectedLabelStyle: Theme.of(context)
-            .textTheme
-            .displayLarge!
-            .copyWith(fontSize: 13, fontWeight: FontWeight.w600),
-        labelStyle: Theme.of(context).textTheme.displayLarge!.copyWith(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-            ),
-        unselectedLabelColor: shuttleGrey,
-        labelColor: white,
-        tabs: tabs,
+        color: grey,
       ),
+      controller: tabController,
+      indicatorSize: TabBarIndicatorSize.tab,
+      onTap: onTap,
+      unselectedLabelStyle: Theme.of(context)
+          .textTheme
+          .displayLarge!
+          .copyWith(fontSize: 13, fontWeight: FontWeight.w600),
+      labelStyle: Theme.of(context).textTheme.displayLarge!.copyWith(
+            fontSize: 13,
+            fontWeight: FontWeight.w600,
+          ),
+      unselectedLabelColor: shuttleGrey,
+      labelColor: shuttleGrey,
+      tabs: tabs,
     );
   }
 }

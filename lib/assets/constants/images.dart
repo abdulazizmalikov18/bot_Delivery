@@ -1,5 +1,5 @@
 class AppImages {
-  static const splash1 = 'assets/images/splash_1.svg';
+  static const splash1 = 'assets/images/splash_1.jpg';
   static const splash2 = 'assets/images/splash_2.svg';
   static const splash3 = 'assets/images/splash_3.svg';
   static const deliver = 'assets/images/deliver.jpg';
