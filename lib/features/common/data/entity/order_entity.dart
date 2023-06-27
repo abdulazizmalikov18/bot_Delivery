@@ -1,6 +1,6 @@
 class OrderEntity {
   final int id;
-  final List<String> image;
+  final String image;
   final String name;
   final String subName;
   final int price;
@@ -9,7 +9,7 @@ class OrderEntity {
 
   OrderEntity({
     this.id = 0,
-    this.image = const [],
+    this.image = "",
     this.name = '',
     this.subName = '',
     this.price = 0,

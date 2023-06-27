@@ -5,15 +5,23 @@ class WTabBar extends StatelessWidget {
   final TabController? tabController;
   final List<Widget> tabs;
   final Function(int)? onTap;
+  final bool isScrollable;
+  final double padding;
 
-  const WTabBar({this.tabController, required this.tabs, Key? key, this.onTap})
+  const WTabBar(
+      {this.tabController,
+      required this.tabs,
+      Key? key,
+      this.onTap,
+      this.isScrollable = true,
+      this.padding = 16})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
-      isScrollable: true,
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      isScrollable: isScrollable,
+      padding: EdgeInsets.symmetric(horizontal: padding),
       labelPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
       indicator: ShapeDecoration(
         shape: RoundedRectangleBorder(

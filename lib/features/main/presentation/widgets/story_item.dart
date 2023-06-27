@@ -2,8 +2,8 @@ import 'package:bot_delivery/assets/colors/colors.dart';
 import 'package:bot_delivery/features/main/domain/entity/story.dart';
 import 'package:flutter/material.dart';
 
-class StoryItem extends StatelessWidget {
-  const StoryItem({Key? key, required this.story}) : super(key: key);
+class StoryItemW extends StatelessWidget {
+  const StoryItemW({Key? key, required this.story}) : super(key: key);
   final Story story;
 
   @override

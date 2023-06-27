@@ -34,3 +34,12 @@ const _orang = Color(0xffF4903A);
 const _shuttleGrey = Color(0xff606469);
 const _imageB = Color(0xffd9d9d9);
 const _containerColor = Color(0xff1D2733);
+
+List<BoxShadow> wboxShadow = const [
+  BoxShadow(
+    offset: Offset(0, 0),
+    blurRadius: 10,
+    spreadRadius: 0,
+    color: Color.fromRGBO(38, 38, 38, 0.10),
+  ),
+];

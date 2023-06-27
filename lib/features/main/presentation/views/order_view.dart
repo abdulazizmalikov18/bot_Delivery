@@ -3,7 +3,9 @@ import 'package:bot_delivery/core/utils/my_function.dart';
 import 'package:bot_delivery/features/common/data/entity/order_entity.dart';
 import 'package:bot_delivery/features/common/widgets/w_button.dart';
 import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
+import 'package:bot_delivery/features/main/presentation/controllers/bloc/orders_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class OrderView extends StatefulWidget {
   const OrderView(
@@ -47,7 +49,7 @@ class _OrderViewState extends State<OrderView> {
                         horizontal: 40,
                       ),
                       child: Image.asset(
-                        widget.orderEntity.image[0],
+                        widget.orderEntity.image,
                         height: double.infinity,
                         width: double.infinity,
                       ),
@@ -80,10 +82,10 @@ class _OrderViewState extends State<OrderView> {
                       right: 16,
                       child: InkWell(
                         onTap: () {
-                          // setState(() {
-                          //   widget.orderEntity.isLiked =
-                          //       !widget.orderEntity.isLiked;
-                          // });
+                          setState(() {
+                            widget.orderEntity.isLiked =
+                                !widget.orderEntity.isLiked;
+                          });
                           // if (widget.orderEntity.isLiked) {
                           //   context
                           //       .read<OrdersBloc>()
@@ -168,15 +170,18 @@ class _OrderViewState extends State<OrderView> {
                 children: [
                   WScaleAnimation(
                     onTap: () {
-                      // setState(() {
-                      //   widget.orderEntity.itemCount--;
-                      //   if (widget.orderEntity.itemCount == 0) {
-                      //     context
-                      //         .read<OrdersBloc>()
-                      //         .add(RemoveOrder(widget.orderEntity.id));
-                      //   }
-                      //   context.read<OrdersBloc>().add(PriceAll());
-                      // });
+                      setState(() {
+                        widget.orderEntity.itemCount--;
+                        if (widget.orderEntity.itemCount == 0) {
+                          context
+                              .read<OrdersBloc>()
+                              .add(RemoveOrder(widget.orderEntity.id));
+                        }
+                        context.read<OrdersBloc>().add(PriceAll(
+                              price: widget.orderEntity.price,
+                              remove: true,
+                            ));
+                      });
                     },
                     child: Container(
                       height: 30,
@@ -195,10 +200,10 @@ class _OrderViewState extends State<OrderView> {
                   ),
                   WScaleAnimation(
                     onTap: () {
-                      // setState(() {
-                      //   widget.orderEntity.itemCount++;
-                      //   context.read<OrdersBloc>().add(PriceAll());
-                      // });
+                      setState(() {
+                        widget.orderEntity.itemCount++;
+                        context.read<OrdersBloc>().add(PriceAll(price: widget.orderEntity.price, remove: false));
+                      });
                     },
                     child: Container(
                       height: 30,
@@ -226,8 +231,7 @@ class _OrderViewState extends State<OrderView> {
                       widget.orderEntity.itemCount++;
                     }
                   });
-                  // context.read<OrdersBloc>().add(AddOrder(widget.orderEntity));
-                  // context.read<OrdersBloc>().add(PriceAll());
+                  context.read<OrdersBloc>().add(AddOrder(widget.orderEntity));
                 },
                 text: widget.orderEntity.itemCount != 0
                     ? 'Qo‘shish ${MyFunctions.getThousandsSeparatedPrice((widget.orderEntity.itemCount * widget.orderEntity.price).toString())} so‘m'

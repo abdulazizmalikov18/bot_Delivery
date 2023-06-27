@@ -1,8 +1,9 @@
+import 'package:bot_delivery/features/common/data/data.dart';
 import 'package:bot_delivery/features/common/navigator/navigator.dart';
 import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
 import 'package:bot_delivery/features/main/domain/entity/story.dart';
-import 'package:bot_delivery/features/main/presentation/views/story_page.dart';
 import 'package:bot_delivery/features/main/presentation/widgets/story_item.dart';
+import 'package:bot_delivery/features/story/presintation/views/story_screen.dart';
 import 'package:flutter/material.dart';
 
 class StoriesWidget extends SliverPersistentHeaderDelegate {
@@ -32,11 +33,14 @@ class StoriesWidget extends SliverPersistentHeaderDelegate {
                 onTap: () {
                   Navigator.of(context, rootNavigator: true).push(
                     fade(
-                      page: const StoryPage(videoCount: 8),
+                      page: StoryScreen(
+                        index: index,
+                        story: AppData.stories,
+                      ),
                     ),
                   );
                 },
-                child: StoryItem(story: stories[index]),
+                child: StoryItemW(story: stories[index]),
               );
             },
             separatorBuilder: (context, index) => const SizedBox(width: 8),
