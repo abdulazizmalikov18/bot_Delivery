@@ -59,7 +59,7 @@ class _HomeMainViewState extends State<HomeMainView>
           controller: _scrollController,
           slivers: [
             SliverAppBar(
-              systemOverlayStyle: SystemUiOverlayStyle(
+              systemOverlayStyle: const SystemUiOverlayStyle(
                 statusBarColor: white,
                 statusBarIconBrightness: Brightness.dark,
               ),
@@ -277,7 +277,7 @@ class _HomeMainViewState extends State<HomeMainView>
                                     ),
                                     child: Text(
                                       '${AppData.catigory[index].list[indexB].price} so\'m',
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.w400,
                                         color: white,
