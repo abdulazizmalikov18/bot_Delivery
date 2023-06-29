@@ -15,6 +15,7 @@ class FavoriteView extends StatelessWidget {
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 16),
         itemCount: AppData.list[0].list.length,
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => InkWell(
           onTap: () {
             showModalBottomSheet(

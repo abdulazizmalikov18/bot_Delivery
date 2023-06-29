@@ -54,14 +54,9 @@ class _StoryContentItemsState extends State<StoryContentItems>
           SizedBox(
             height: double.infinity,
             width: double.infinity,
-            child: ClipRRect(
-              borderRadius: const BorderRadius.vertical(
-                top: Radius.circular(16),
-              ),
-              child: Image.asset(
-                widget.story.list[itemIndex].image,
-                fit: BoxFit.cover,
-              ),
+            child: Image.asset(
+              widget.story.list[itemIndex].image,
+              fit: BoxFit.cover,
             ),
           ),
           Positioned(

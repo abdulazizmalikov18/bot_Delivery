@@ -27,4 +27,5 @@ class AppImages {
   static const burgerB = 'assets/images/burger.png';
   static const russian = 'assets/images/russian.png';
   static const uzbek = 'assets/images/uzbek.png';
+  static const emptyBox = 'assets/images/empty-box.png';
 }

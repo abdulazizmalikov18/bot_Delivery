@@ -13,15 +13,15 @@ class MTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      cursorColor: Colors.white,
+      cursorColor: dark,
       style: Theme.of(context)
           .textTheme
           .displayLarge!
-          .copyWith(fontWeight: FontWeight.w400, color: white),
+          .copyWith(fontWeight: FontWeight.w400, color: dark),
       keyboardType: keyBoardType,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
+        hintStyle: const TextStyle(color: dark),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Colors.transparent),

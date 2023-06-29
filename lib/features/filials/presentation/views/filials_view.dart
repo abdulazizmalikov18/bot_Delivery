@@ -12,6 +12,7 @@ class FilialsView extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
+        physics: const BouncingScrollPhysics(),
         itemCount: 5,
         itemBuilder: (context, index) => Container(
           height: 240,

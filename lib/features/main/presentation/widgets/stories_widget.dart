@@ -1,5 +1,5 @@
 import 'package:bot_delivery/features/common/data/data.dart';
-import 'package:bot_delivery/features/common/navigator/navigator.dart';
+import 'package:bot_delivery/features/common/navigator/navigator_story.dart';
 import 'package:bot_delivery/features/common/widgets/w_scale_animation.dart';
 import 'package:bot_delivery/features/main/domain/entity/story.dart';
 import 'package:bot_delivery/features/main/presentation/widgets/story_item.dart';
@@ -32,12 +32,11 @@ class StoriesWidget extends SliverPersistentHeaderDelegate {
               return WScaleAnimation(
                 onTap: () {
                   Navigator.of(context, rootNavigator: true).push(
-                    fade(
-                      page: StoryScreen(
-                        index: index,
-                        story: AppData.stories,
-                      ),
-                    ),
+                    fadeStory(
+                        page: StoryScreen(
+                      index: index,
+                      story: AppData.stories,
+                    )),
                   );
                 },
                 child: StoryItemW(story: stories[index]),
